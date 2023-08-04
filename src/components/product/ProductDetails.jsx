@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { client, urlFor } from '../../../lib/client'
+import { urlFor } from '../../../lib/client'
 import { Product } from '../../components'
 
 import {

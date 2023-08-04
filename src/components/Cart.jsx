@@ -1,5 +1,3 @@
-import { useEffect, useRef } from 'react'
-
 import { Link } from 'react-router-dom'
 import {
 	AiOutlineMinus,
@@ -10,15 +8,11 @@ import {
 
 import { TiDeleteOutline } from 'react-icons/ti'
 
-import { toast } from 'react-hot-toast'
-
 import { useStateContext } from '../context/StateContext'
 
 import { urlFor } from '../../lib/client'
 
 function Cart() {
-	const cartRef = useRef()
-
 	const {
 		totalPrice,
 		totalQuantities,
@@ -28,32 +22,6 @@ function Cart() {
 		onDelete,
 		handleCheckout,
 	} = useStateContext()
-
-	useEffect(() => {
-		console.log(cartItems)
-	}, [cartItems])
-
-	// const handleCheckout = async () => {
-	// 	const response = await fetch(
-	// 		'http://localhost:3001/create-checkout-session',
-	// 		{
-	// 			method: 'POST',
-
-	// 			headers: {
-	// 				'Content-Type': 'application/json',
-	// 			},
-	// 			body: JSON.stringify(cartItems),
-	// 		},
-	// 	)
-
-	// 	if (response.statusCode === 500) return
-
-	// 	const session = await response.json()
-
-	// 	toast.loading('Redirecting...')
-
-	// 	window.location = session.url
-	// }
 
 	return (
 		<div className='cart-wrapper'>
