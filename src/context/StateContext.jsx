@@ -93,9 +93,8 @@ function StateContext({ children }) {
 	}
 
 	const handleCheckout = async () => {
-		const serverUrl = import.meta.env.SERVER_DOMAIN
-			? import.meta.env.SERVER_DOMAIN
-			: 'http://localhost:3000'
+		// const serverUrl = 'http://localhost:3000'
+		const serverUrl = 'https://stripe-test-server.onrender.com'
 
 		const response = await fetch(`${serverUrl}/create-checkout-session`, {
 			method: 'POST',
